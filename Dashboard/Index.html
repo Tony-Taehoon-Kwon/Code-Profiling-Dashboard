@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Profiler</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 100%}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+        
+    /* On small screens, set height to 'auto' for the grid */
+    @media screen and (max-width: 767px) {
+      .row.content {height: auto;} 
+    }
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 3px;
+}
+
+.node text {
+  font: 12px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 3px;
+}
+
+html, body, .container-fluid{
+height: 100%;
+}
+
+.viscol{
+height: 100%;
+}
+
+.headersec{
+height: 16%;
+margin: 1%;
+}
+
+.visrow{
+height: 70%;
+padding: 1%;
+}
+
+.chartcol{
+height: 100%;
+padding: 1%
+}
+
+.statcol{
+height: 100%;
+
+}
+
+.chartwell{
+height: 100%;
+}
+
+.chart{
+height: 100%;
+}
+
+.footersec{
+height: 10%;
+padding: 1%
+}
+
+.well{
+}
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse visible-xs">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Meadeor</a></li>
+        <li><a href="#">Meadeor</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav hidden-xs">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#section1">Meadeor</a></li>
+      </ul><br>
+    </div>
+    <br>
+    
+    <div class="col-sm-9 viscol">
+      <div class="well headersec">
+        <p id="avgTime"> </p>
+        <p id="minTime"> </p>
+        <p id="maxTime"> </p>
+      </div>
+      <div class="row visrow">
+        <div class="col-sm-6 chartcol">
+          <div class="well chartwell">
+            <div id="sunburst" class="chart"></div>
+          </div>
+        </div>
+        <div class="col-sm-6 chartcol">
+          <div class="well chartwell">
+            <div id="function_tree" class="chart"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row footersec">
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+<script src="https://unpkg.com/d3-simple-slider"></script>
+<script src="data.js"></script>
+<script src="profiler_tree_graph_v5.js"></script>
+<script src="sunburst.js"></script>
+</html>
